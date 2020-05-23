@@ -1,0 +1,93 @@
+------------------------CSS------------------------------
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #51545c;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:#e74c3c;
+    text-decoration:none;
+	}
+---------------------JavaScript----------------------------
+import axios from 'axios'
+
+var _ = require("underscore");
+
+    inputChange = async (e) => {
+        const res = await axios.get('http://localhost:4000/api/notes')
+        const search = document.getElementById("mySearch").value
+        var filtered = _.where(res.data, { author: search})
+        console.log(filtered);
+    };
+
+                <head>
+                    <title>Search Box</title>
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossOrigin="anonymous" />
+                </head>
+
+
+
+<div className="header">
+                        <div className="container h-100">
+                            <div className="d-flex justify-content-center h-100">
+                                <div className="searchbar">
+                                    <input className="search_input" id="mySearch" type="text" name="search" placeholder="Search..." />
+                                        <button
+                                            onClick={this.inputChange}
+                                            type="submit"
+                                            className="search_icon">
+                                            <i className="fas fa-search"/>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+

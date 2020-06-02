@@ -1,0 +1,6 @@
+$ mongod
+./backend$ npm dev run
+./frontend$ npm start
+<button className="btn btn-danger" style={{marginLeft:190 }} onClick={() => this.deleteNote(note._id)}>
+
+

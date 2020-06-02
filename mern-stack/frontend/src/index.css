@@ -1,0 +1,32 @@
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+      }
+      /* Style buttons */
+.btn1 {
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 5px 12px; /* Some padding */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 12px;
+  margin-left: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 0px 10px 0 rgba(0,0,0,0.19);
+}

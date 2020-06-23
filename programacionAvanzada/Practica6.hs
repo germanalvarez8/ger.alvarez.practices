@@ -38,6 +38,11 @@ sumaNat1 (Succ x) (Succ y) = sumaNat1 x (Succ (Succ y))
 sumaNat2 :: Nat->Nat->Nat
 sumaNat2 x y= intToNat ((natToInt x)+(natToInt y))
 
+prodNat :: Nat->Nat->Nat
+ProdNat Zero y = Zero
+prodNat x Zero = Zero
+prodNat (Succ x)(Succ y) = sumaNat1 (Succ x) (prodNat (Succ x) y)
+
 size :: BinTree a-> Int
 size Nil = 0
 size (Node hi r hd) = 1 + size hi + size hd

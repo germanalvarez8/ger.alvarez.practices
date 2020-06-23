@@ -3,6 +3,12 @@ creciente [] = True
 creciente [x] = True
 creciente (x:xs) = (x<= (head xs)) && creciente xs
 
+inf = 1+inf
+
+m :: [Int]->Int
+m [] = 10000000000000000
+m (x:xs)= min x (m xs)
+
 test::(Eq a)=> [a]->Bool
 test [] = True
 test [x] = True
